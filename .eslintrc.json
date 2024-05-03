@@ -1,5 +1,5 @@
 {
-  "extends": "next/core-web-vitals",
+  "extends": ["next/core-web-vitals","@rocketseat/eslint-config/next"],
   "rules": {
     "no-unused-vars": "error"
   }

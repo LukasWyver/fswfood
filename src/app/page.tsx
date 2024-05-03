@@ -1,10 +1,13 @@
 import Header from "@/_components/header";
+import Search from "@/_components/search";
 
 const Home = () => {
   return (
     <>
       <Header />
-      <h1>Hello World</h1>
+      <div className="px-5 pt-6">
+        <Search />
+      </div>
     </>
   );
 };
