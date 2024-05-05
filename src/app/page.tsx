@@ -1,12 +1,12 @@
 import CategoryList from "@/_components/category-list";
 import Header from "@/_components/header";
 import ProductList from "@/_components/product-list";
+import PromoBanner from "@/_components/promo-banner";
 import Search from "@/_components/search";
 import { Button } from "@/_components/ui/button";
 import { db } from "@/_lib/prisma";
 import { ChevronRightIcon } from "lucide-react";
 import { Metadata } from "next";
-import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -40,16 +40,12 @@ const Home = async () => {
       </div>
 
       <div className="px-5 pt-6">
-        <Image
-          src="/promo-banner.png"
-          alt="Até 30% de desconto em pizzas"
-          className="h-auto w-full object-contain"
-          sizes="100vh"
-          quality={100}
-          height={0}
-          width={0}
+        <PromoBanner
+          src="/promo-banner-pizza.png"
+          alt="Até 30% de desconto em pizzas."
         />
       </div>
+
       <div className="space-y-4 pt-6">
         <div className="flex items-center justify-between px-5">
           <h2 className="font-semibold">Pedidos Recomendados</h2>
@@ -64,6 +60,13 @@ const Home = async () => {
         </div>
 
         <ProductList products={products} />
+      </div>
+
+      <div className="px-5 pt-6">
+        <PromoBanner
+          src="/promo-banner-burguer.png"
+          alt="A partir de R$ 17,90 em lanches."
+        />
       </div>
     </>
   );
