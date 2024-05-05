@@ -3,6 +3,7 @@ import Header from "@/_components/header";
 import ProductList from "@/_components/product-list";
 import Search from "@/_components/search";
 import { Button } from "@/_components/ui/button";
+import { db } from "@/_lib/prisma";
 import { ChevronRightIcon } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
@@ -11,7 +12,23 @@ export const metadata: Metadata = {
   title: "Home",
 };
 
-const Home = () => {
+const Home = async () => {
+  const products = await db.product.findMany({
+    where: {
+      discountPercentage: {
+        gt: 0,
+      },
+    },
+    take: 10,
+    include: {
+      restaurant: {
+        select: {
+          name: true,
+        },
+      },
+    },
+  });
+
   return (
     <>
       <Header />
@@ -46,7 +63,7 @@ const Home = () => {
           </Button>
         </div>
 
-        <ProductList />
+        <ProductList products={products} />
       </div>
     </>
   );
