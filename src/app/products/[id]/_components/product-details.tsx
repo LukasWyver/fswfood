@@ -44,7 +44,7 @@ const ProductDetails = ({
     });
 
   return (
-    <div className="py-5">
+    <div className="relative z-50 -mt-6 rounded-t-3xl bg-white py-5">
       {/* Nome do Restaurant */}
       <div className="flex items-center gap-1.5 px-5">
         <div className="relative h-6 w-6">
