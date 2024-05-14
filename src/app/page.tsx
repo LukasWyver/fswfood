@@ -36,55 +36,58 @@ const Home = async () => {
       <div className="px-5 pt-6">
         <Search />
       </div>
-      <div className="px-5 pt-6">
-        <CategoryList />
-      </div>
 
-      <div className="px-5 pt-6">
-        <PromoBanner
-          src="/promo-banner-pizza.png"
-          alt="Até 30% de desconto em pizzas."
-        />
-      </div>
-
-      <div className="space-y-4 pt-6">
-        <div className="flex items-center justify-between px-5">
-          <h2 className="font-semibold">Pedidos Recomendados</h2>
-
-          <Button
-            variant="ghost"
-            className="h-fit p-0 text-primary hover:bg-transparent"
-          >
-            Ver todos
-            <ChevronRightIcon size={16} />
-          </Button>
+      <main className="flex flex-col">
+        <div className="px-5 pt-6 md:order-3">
+          <PromoBanner
+            src="/promo-banner-pizza.png"
+            alt="Até 30% de desconto em pizzas."
+          />
         </div>
 
-        <ProductList products={products} />
-      </div>
-
-      <div className="px-5 pt-6">
-        <PromoBanner
-          src="/promo-banner-burguer.png"
-          alt="A partir de R$ 17,90 em lanches."
-        />
-      </div>
-
-      <div className="space-y-4 py-6">
-        <div className="flex items-center justify-between px-5">
-          <h2 className="font-semibold">Restaurantes Recomendados</h2>
-
-          <Button
-            variant="ghost"
-            className="h-fit p-0 text-primary hover:bg-transparent"
-          >
-            Ver todos
-            <ChevronRightIcon size={16} />
-          </Button>
+        <div className="pt-4">
+          <CategoryList />
         </div>
 
-        <RestaurantList />
-      </div>
+        <div className="space-y-4 pt-4">
+          <div className="flex items-center justify-between px-5">
+            <h2 className="font-semibold">Pedidos Recomendados</h2>
+
+            <Button
+              variant="ghost"
+              className="h-fit p-0 text-primary hover:bg-transparent"
+            >
+              Ver todos
+              <ChevronRightIcon size={16} />
+            </Button>
+          </div>
+
+          <ProductList products={products} />
+        </div>
+
+        <div className="px-5 pt-6 md:order-4">
+          <PromoBanner
+            src="/promo-banner-burguer.png"
+            alt="A partir de R$ 17,90 em lanches."
+          />
+        </div>
+
+        <div className="space-y-4 py-6">
+          <div className="flex items-center justify-between px-5">
+            <h2 className="font-semibold">Restaurantes Recomendados</h2>
+
+            <Button
+              variant="ghost"
+              className="h-fit p-0 text-primary hover:bg-transparent"
+            >
+              Ver todos
+              <ChevronRightIcon size={16} />
+            </Button>
+          </div>
+
+          <RestaurantList />
+        </div>
+      </main>
     </>
   );
 };

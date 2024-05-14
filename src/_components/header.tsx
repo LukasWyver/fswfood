@@ -7,7 +7,11 @@ const Header = () => {
     <header className="flex justify-between px-5 pt-6">
       <Image src="/fswfood.svg" width={100} height={30} alt="FSW Foods" />
 
-      <Button size="icon" variant="ghost">
+      <Button
+        size="icon"
+        variant="ghost"
+        className="hover:bg-primary/5 hover:text-primary"
+      >
         <MenuIcon />
       </Button>
     </header>

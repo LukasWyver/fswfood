@@ -10,7 +10,7 @@ interface RestaurantItemProps {
 
 const RestaurantItem = ({ restaurant }: RestaurantItemProps) => {
   return (
-    <div className="min-w-[266px] max-w-[266px] space-y-3">
+    <div className="w-full min-w-[266px] max-w-[266px] space-y-3 md:min-w-[381px] md:max-w-[381px]">
       <div className="relative h-[136px] w-full">
         <Image
           fill
